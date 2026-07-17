@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+/* ─────────────────────────────────────────────
+ * SISTEMA DE VARIÁVEIS DINÂMICAS
+ * Todas as cores são definidas aqui em :root e .dark
+ * O @theme abaixo faz o Tailwind apontar para estas variáveis
+ * Assim bg-card, text-charcoal etc. mudam no dark mode
+ * ───────────────────────────────────────────── */
+
+:root {
+  /* Backgrounds */
+  --theme-paper:      #FFF8EE;
+  --theme-card:       #F2EAD9;
+  --theme-input:      #EDE3D0;
+
+  /* Textos */
+  --theme-charcoal:   #2A2118;
+  --theme-warm-gray:  #7A6E64;
+
+  /* Acentos (cores da Lokitta) */
+  --theme-sage:       #8B9E7D;
+  --theme-gold:       #C9931E;
+  --theme-lavender:   #C5B4E3;
+  --theme-blush:      #F0B8C4;
+  --theme-mint:       #A8D5C2;
+  --theme-sky:        #B3D4F5;
+
+  /* Chrome das janelas Y2K */
+  --theme-win-chrome: #D4CBC0;
+  --theme-win-title:  #6B8F5E;
+  --theme-win-btn:    #C8B89A;
+}
+
+/* ─────────────────────────────────────────────
+ * DARK THEME: "Late Night Cozy"
+ * Mesa de estudo iluminada por lamparina.
+ * Zero neon, tudo quente e aconchegante.
+ * ───────────────────────────────────────────── */
+.dark {
+  /* Backgrounds */
+  --theme-paper:      #1E1A16;
+  --theme-card:       #2A2420;
+  --theme-input:      #332D28;
+
+  /* Textos */
+  --theme-charcoal:   #DDD4C4;
+  --theme-warm-gray:  #8C8077;
+
+  /* Acentos */
+  --theme-sage:       #6E8262;
+  --theme-gold:       #B8832A;
+  --theme-lavender:   #7E6EA0;
+  --theme-blush:      #8C5E68;
+  --theme-mint:       #4A7A68;
+  --theme-sky:        #4A6A85;
+
+  /* Chrome das janelas Y2K (madeira escura) */
+  --theme-win-chrome: #3D3630;
+  --theme-win-title:  #3D5C38;
+  --theme-win-btn:    #4A4038;
+}
+
+/* ─────────────────────────────────────────────
+ * @THEME: Liga as classes Tailwind às variáveis dinâmicas
+ * CRÍTICO: usar var() aqui, NÃO hexadecimais fixos.
+ * ───────────────────────────────────────────── */
+@theme {
+  --color-paper:      var(--theme-paper);
+  --color-card:       var(--theme-card);
+  --color-input:      var(--theme-input);
+  --color-charcoal:   var(--theme-charcoal);
+  --color-warm-gray:  var(--theme-warm-gray);
+  --color-sage:       var(--theme-sage);
+  --color-gold:       var(--theme-gold);
+  --color-lavender:   var(--theme-lavender);
+  --color-blush:      var(--theme-blush);
+  --color-mint:       var(--theme-mint);
+  --color-sky:        var(--theme-sky);
+  --color-win-chrome: var(--theme-win-chrome);
+  --color-win-title:  var(--theme-win-title);
+  --color-win-btn:    var(--theme-win-btn);
+
+  --font-sans:    var(--font-nunito);
+  --font-display: var(--font-quicksand);
+  --font-retro:   var(--font-vt323);
+}
+
+/* ─────────────────────────────────────────────
+ * BASE STYLES
+ * ───────────────────────────────────────────── */
+body {
+  background: var(--theme-paper);
+  color: var(--theme-charcoal);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ─────────────────────────────────────────────
+ * SCROLLBAR COZY Y2K (responsivo ao tema)
+ * ───────────────────────────────────────────── */
+::-webkit-scrollbar { width: 14px; }
+::-webkit-scrollbar-track { background: var(--theme-input); }
+::-webkit-scrollbar-thumb {
+  background: var(--theme-win-chrome);
+  border: 2px solid var(--theme-input);
+  border-radius: 0;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--theme-sage); }
+::-webkit-scrollbar-button {
+  display: block;
+  height: 14px;
+  background: var(--theme-win-chrome);
+  border: 1px outset var(--theme-input);
+}
+
+/* ─────────────────────────────────────────────
+ * Y2K WINDOW BORDERS (todas usam variáveis dinâmicas)
+ * ───────────────────────────────────────────── */
+.win98-border {
+  border: 2px solid;
+  border-color: var(--theme-input) var(--theme-warm-gray) var(--theme-warm-gray) var(--theme-input);
+  box-shadow: 1px 1px 0 var(--theme-warm-gray), inset 1px 1px 0 rgba(255,255,255,0.15);
+}
+
+.win98-border-inset {
+  border: 2px solid;
+  border-color: var(--theme-warm-gray) var(--theme-input) var(--theme-input) var(--theme-warm-gray);
+  box-shadow: inset 1px 1px 0 var(--theme-warm-gray);
+}
+
+.win98-btn {
+  border: 2px solid;
+  border-color: var(--theme-input) var(--theme-warm-gray) var(--theme-warm-gray) var(--theme-input);
+  background: var(--theme-win-chrome);
+  color: var(--theme-charcoal);
+  padding: 1px 6px;
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s ease;
+}
+.win98-btn:active {
+  border-color: var(--theme-warm-gray) var(--theme-input) var(--theme-input) var(--theme-warm-gray);
+}
+
+/* ─────────────────────────────────────────────
+ * PAPER TEXTURE (linhas de caderno, tema-aware)
+ * ───────────────────────────────────────────── */
+.paper-bg {
+  background-color: var(--theme-paper);
+  background-image: repeating-linear-gradient(
+    transparent,
+    transparent 31px,
+    var(--theme-card) 31px,
+    var(--theme-card) 32px
+  );
+  background-size: 100% 32px;
+}

@@ -1,0 +1,3 @@
+@echo off
+echo Iniciando o servidor local do Next.js...
+call npm.cmd run dev
