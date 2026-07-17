@@ -21,4 +21,9 @@ export const VIDEOS: Video[] = [
     title: "Perdi MESES aprendendo programacao do JEITO ERRADO",
     channel: "teofilo_dev",
   },
+  {
+    id: "Hv9cL035Oc0",
+    title: "Deixe seu Desktop com Relógio e Data Bonitos! (Usando Rainmeter)",
+    channel: "teofilo dev.",
+  },
 ];

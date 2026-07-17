@@ -114,6 +114,13 @@ body {
   border: 1px outset var(--theme-input);
 }
 
+.custom-scrollbar::-webkit-scrollbar {
+  height: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  border-width: 1px;
+}
+
 /* ─────────────────────────────────────────────
  * Y2K WINDOW BORDERS (todas usam variáveis dinâmicas)
  * ───────────────────────────────────────────── */
