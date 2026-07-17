@@ -9,6 +9,14 @@ export interface Video {
   channel: string;
 }
 
+/** Representa dados de estatísticas */
+export interface StatsData {
+  views: number;
+  subs: number;
+  videosCount: number;
+  source: string;
+}
+
 /** Representa um serviço oferecido */
 export interface Service {
   iconName: string;

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import { Loader2 } from "lucide-react";
 
-import { useYoutubeStats } from "@/hooks/use-youtube-stats";
+import { useYoutubeStats, type StatsData } from "@/hooks/use-youtube-stats";
 
 /**
  * Secao Estatisticas: contadores animados de views, likes e videos.
@@ -48,10 +48,10 @@ export default function StatsSection() {
             className="text-3xl font-bold text-charcoal tracking-wider"
             style={{ fontFamily: "var(--font-retro)" }}
           >
-            {stats && <AnimatedCounter target={stats.likes} />}
+            {stats && <AnimatedCounter target={stats.subs} />}
           </div>
           <p className="text-warm-gray text-xs mt-2 font-bold">
-            Likes Totais 👍
+            Inscritos 👥
           </p>
         </div>
         <div className="text-center p-5 bg-card win98-border-inset">
@@ -68,7 +68,7 @@ export default function StatsSection() {
       </div>
       <div className="mt-6 p-2 bg-paper win98-border flex justify-between items-center text-[10px] text-warm-gray">
         <span style={{ fontFamily: "var(--font-retro)" }}>
-          {stats ? `Dados via ${stats.source === "db_cache" || stats.source === "refreshed_db" ? "Neon DB ⚡" : "API Fallback 🛡️"}` : "Aguardando dados..."}
+          {stats ? `Dados via API Pública do GitHub ⚡` : "Aguardando dados..."}
         </span>
         {error && (
           <span className="text-red-500 font-bold" style={{ fontFamily: "var(--font-retro)" }}>

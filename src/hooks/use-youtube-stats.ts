@@ -1,7 +1,12 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import type { StatsData } from "@/types";
+export interface StatsData {
+  views: number;
+  subs: number;
+  videosCount: number;
+  source: string;
+}
 
 /**
  * Data Layer (Clean Architecture):
