@@ -1,8 +1,9 @@
 "use client";
 
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
-import { PlayCircle } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { PlayCircle, ChevronRight, ChevronLeft } from "lucide-react";
 import { VIDEOS } from "@/constants";
 
 interface PortfolioSectionProps {
@@ -14,15 +15,48 @@ interface PortfolioSectionProps {
  * Ao clicar, abre o modal de video.
  */
 export default function PortfolioSection({ onPlayVideo }: PortfolioSectionProps) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [showLeft, setShowLeft] = useState(false);
+  const [showRight, setShowRight] = useState(true);
+
+  const checkScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setShowLeft(scrollLeft > 0);
+      setShowRight(Math.ceil(scrollLeft + clientWidth) < scrollWidth);
+    }
+  };
+
+  useEffect(() => {
+    checkScroll();
+    window.addEventListener("resize", checkScroll);
+    return () => window.removeEventListener("resize", checkScroll);
+  }, []);
+
+  const scroll = (direction: "left" | "right") => {
+    if (scrollRef.current) {
+      const clientWidth = scrollRef.current.clientWidth;
+      const scrollAmount = direction === "left" ? -clientWidth : clientWidth;
+      scrollRef.current.scrollBy({ left: scrollAmount, behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="p-4">
+    <div className="p-4 relative">
       <h2 
         className="text-2xl font-bold text-sage mb-4"
         style={{ fontFamily: "var(--font-display)" }}
       >
         Trabalhos Editados
       </h2>
-      <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-4 -mx-4 px-4 custom-scrollbar">
+      
+      {/* Container Relativo para as setas */}
+      <div className="relative group/carousel">
+        <div 
+          ref={scrollRef}
+          onScroll={checkScroll}
+          className="flex overflow-x-auto snap-x snap-mandatory gap-6 pb-4 -mx-4 px-4 [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+        >
         {VIDEOS.map((video, i) => (
           <motion.div
             key={video.id}
@@ -65,6 +99,36 @@ export default function PortfolioSection({ onPlayVideo }: PortfolioSectionProps)
             </div>
           </motion.div>
         ))}
+        </div>
+
+        {/* Botões de Navegação */}
+        <AnimatePresence>
+          {showLeft && (
+            <motion.button
+              initial={{ opacity: 0, x: 10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 10 }}
+              onClick={() => scroll("left")}
+              className="absolute left-[-16px] top-[40%] -translate-y-1/2 z-10 w-10 h-10 bg-win-btn win98-border flex items-center justify-center text-charcoal shadow-xl hover:bg-sage transition-colors opacity-0 group-hover/carousel:opacity-100"
+            >
+              <ChevronLeft size={24} />
+            </motion.button>
+          )}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {showRight && (
+            <motion.button
+              initial={{ opacity: 0, x: -10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -10 }}
+              onClick={() => scroll("right")}
+              className="absolute right-[-16px] top-[40%] -translate-y-1/2 z-10 w-10 h-10 bg-win-btn win98-border flex items-center justify-center text-charcoal shadow-xl hover:bg-sage transition-colors opacity-0 group-hover/carousel:opacity-100"
+            >
+              <ChevronRight size={24} />
+            </motion.button>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
