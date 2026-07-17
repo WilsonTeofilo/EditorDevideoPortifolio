@@ -22,7 +22,7 @@ const vt323 = VT323({
 });
 
 export const metadata: Metadata = {
-  title: "Lokitta Edx | Editora de Video Profissional",
+  title: "LokkitaEdx",
   description:
     "Portfolio de edicao de video profissional. Edicao para YouTube, Shorts, Reels e TikTok. Conteudos de tecnologia, programacao, games e videos educativos.",
   keywords: [
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     "lokitta edx",
     "portfolio",
   ],
-  authors: [{ name: "Lokitta Edx" }],
+  authors: [{ name: "LokkitaEdx" }],
   openGraph: {
-    title: "Lokitta Edx | Editora de Video Profissional",
+    title: "LokkitaEdx",
     description:
       "Portfolio de edicao de video profissional para criadores de conteudo.",
     type: "website",
