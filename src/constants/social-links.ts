@@ -25,8 +25,8 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     platform: "YTJobs",
-    url: "https://ytjobs.co/talent/profile/595643?r=444",
-    handle: "Perfil Lokitta",
+    url: "https://ytjobs.co/talent/profile/595643?r=62",
+    handle: "Perfil NaraaEdx",
     iconName: "Briefcase",
   },
 ];
