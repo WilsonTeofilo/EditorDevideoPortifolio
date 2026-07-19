@@ -41,7 +41,7 @@ export default function TopBar({ windows, onToggleWindow }: TopBarProps) {
       >
         <div className="flex items-center gap-2">
           <Image
-            src="/Nara_Symbol.png"
+            src="/Nara_Symbol.webp"
             alt="Naraa_Edx mascote"
             width={24}
             height={24}
