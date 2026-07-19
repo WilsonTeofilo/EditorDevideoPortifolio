@@ -7,20 +7,20 @@ import type { SocialLink } from "@/types";
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     platform: "Instagram",
-    url: "https://www.instagram.com/lokitta_edx/reels/",
-    handle: "@lokitta_edx",
+    url: "https://www.instagram.com/naraa_edx/",
+    handle: "@naraa_edx",
     iconName: "Instagram",
   },
   {
     platform: "Twitter / X",
-    url: "https://x.com/LokittaEdx",
-    handle: "@LokittaEdx",
+    url: "https://x.com/NaraaEdx",
+    handle: "@NaraaEdx",
     iconName: "XIcon",
   },
   {
     platform: "Email",
-    url: "mailto:lokkitaedx@gmail.com",
-    handle: "lokkitaedx@gmail.com",
+    url: "mailto:Naraaedx@gmail.com",
+    handle: "Naraaedx@gmail.com",
     iconName: "Mail",
   },
   {

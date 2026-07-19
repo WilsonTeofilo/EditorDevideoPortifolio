@@ -31,8 +31,8 @@ export default function HeroSection() {
         
         <div className="w-48 h-48 md:w-56 md:h-56 overflow-hidden win98-border-inset bg-card p-2">
           <Image
-            src="/perfikl.png"
-            alt="Lokitta Edx"
+            src="/naraa_edx.png"
+            alt="Naraa_Edx"
             width={224}
             height={224}
             className="w-full h-full object-cover object-top filter contrast-[0.95] sepia-[0.1]"

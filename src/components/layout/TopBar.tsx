@@ -41,8 +41,8 @@ export default function TopBar({ windows, onToggleWindow }: TopBarProps) {
       >
         <div className="flex items-center gap-2">
           <Image
-            src="/mascot.jpg"
-            alt="Lokitta Edx mascote"
+            src="/Nara_Symbol.png"
+            alt="Naraa_Edx mascote"
             width={24}
             height={24}
             className="rounded-sm border border-white/30"
@@ -51,7 +51,7 @@ export default function TopBar({ windows, onToggleWindow }: TopBarProps) {
             className="font-bold text-sm text-white tracking-wider"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            Lokitta Edx
+            Naraa_Edx
           </span>
         </div>
 

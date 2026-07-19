@@ -8,7 +8,7 @@
 
 export const SITE_CONTENT = {
   // Informações Globais
-  title: "Lokitta Edx",
+  title: "Naraa_Edx",
   status: "* ONLINE *",
   
   // Hero Section
@@ -40,7 +40,7 @@ export const SITE_CONTENT = {
   contact: {
     title: "Vamos trabalhar juntos!",
     description: "Estou disponível para novos projetos de edição e parcerias criativas.",
-    email: "lokitta.edx@gmail.com",
+    email: "Naraaedx@gmail.com",
     buttonText: "Enviar Email",
     warningTitle: "Aviso do Sistema:",
     warningText: "Tempos de resposta podem variar dependendo da fila de renderização atual.",
@@ -48,7 +48,7 @@ export const SITE_CONTENT = {
 
   // Títulos das Janelas (DesktopLayout)
   windows: {
-    hero: { title: "lokitta_edx.exe" },
+    hero: { title: "naraa_edx.exe" },
     about: { title: "Timeline_Celeron_to_2025.docx" },
     services: { title: "servicos.json" },
     portfolio: { title: "portfolio.mp4" },
