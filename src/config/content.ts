@@ -27,7 +27,6 @@ export const SITE_CONTENT = {
   // Services Section
   services: {
     title: "O que eu faço",
-    level: "Nível: Básico - Intermediário",
     technicalSkillsTitle: "Habilidades Técnicas",
   },
 

@@ -22,12 +22,6 @@ export default function ServicesSection() {
         >
           O que eu faco
         </h2>
-        <p 
-          className="text-warm-gray text-xs bg-input px-2 py-1 win98-border-inset hidden sm:block"
-          style={{ fontFamily: "var(--font-retro)" }}
-        >
-          Nivel: Basico - Intermediario
-        </p>
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
