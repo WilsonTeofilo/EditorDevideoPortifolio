@@ -57,8 +57,8 @@ export const SITE_CONTENT = {
 
   // Manual Stats (Para substituir a API que caiu)
   manualStats: {
-    views: 315000,
-    subs: 5400,
+    views: 166870,
+    subs: 1260,
   }
 };
 
