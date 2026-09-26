@@ -53,5 +53,12 @@ export const SITE_CONTENT = {
     portfolio: { title: "portfolio.mp4" },
     stats: { title: "Estatisticas_Acumuladas.xls" },
     contact: { title: "contato.txt" },
+  },
+
+  // Manual Stats (Para substituir a API que caiu)
+  manualStats: {
+    views: 315000,
+    subs: 5400,
   }
 };
+

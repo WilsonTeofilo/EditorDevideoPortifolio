@@ -26,4 +26,9 @@ export const VIDEOS: Video[] = [
     title: "Deixe seu Desktop com Relógio e Data Bonitos! (Usando Rainmeter)",
     channel: "teofilo dev.",
   },
+  {
+    id: "5zUBh0phvi0",
+    title: "Escolha a área errada de PROGRAMAÇÃO e fique DESEMPREGADO ( Tier List)",
+    channel: "Teofilo Dev",
+  },
 ];
